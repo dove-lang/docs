@@ -15,7 +15,7 @@ Block comments start with `/*` and ends with `*/`.
 ```
 
 ### End of Lines
-Using `;` to end lines is deprecated and is not supported in Dove. 
+Using `;` to end lines is deprecated and is not supported in Dove.
 `\n` is meaningful in Dove - it end lines.
 ```Swift
 // Below are two statements:
