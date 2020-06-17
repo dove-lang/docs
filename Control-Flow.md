@@ -49,7 +49,7 @@ while true {
 ```
 
 #### For loops
-A `for` loop facilitates iterating over elements of a collection, such as iterating through an array. It uses the following syntax, where `arr` is the collection to iterate, and `elem` is the corresponding element in `arr` each rotation.
+A `for` loop facilitates iterating over elements of a collection, such as iterating through an array. It uses the following syntax, where `arr` is the collection to iterate, and `elem` is the corresponding element in `arr` each iteration.
 ```swift
 let arr = [1, 2, 3]
 for elem in arr {
