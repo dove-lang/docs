@@ -6,4 +6,4 @@ The official docs for the Dove Programming Language.
 * [Variables](Variables) that store values in your Dove program.
 * [Functions](Functions)... You know what functions are.
 * [Classes](Classes).
-
+* [Grammar Rules](Grammar-Rules) that the parser uses.
