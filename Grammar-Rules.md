@@ -11,7 +11,7 @@ declaration     = class_decl
                 | var_decl
                 | statement
 
-class_decl      = "class" IDENTIFIER ( ":" IDENTIFIER )? "{" ( fun_decl | NEWLINE )* "}"
+class_decl      = "class" IDENTIFIER ( "from" IDENTIFIER )? "{" ( fun_decl | NEWLINE )* "}"
 fun_decl        = "fun" IDENTIFIER "(" parameters? ")" block
 var_decl        = "let" IDENTIFIER ( "=" expression )? NEWLINE
 ```
