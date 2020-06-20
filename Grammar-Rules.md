@@ -1,7 +1,7 @@
 ## Grammar Rules
 
 ```
-program         = declaration* EOF
+program         = declarations EOF
 ```
 
 ### Declarations
@@ -26,13 +26,13 @@ statement       = expr_stmt
                 | empty_stmt
                 | block
 
-expr_stmt       = expression NEWLINE
+expr_stmt       = expression
 for_stmt        = "for" IDENTIFIER "in" expression block
-print_stmt      = "print" expression NEWLINE
-return_stmt     = "return" expression NEWLINE
+print_stmt      = "print" expression
+return_stmt     = "return" expression
 while_stmt      = "while" expression block
-empty_stmt      = NEWLINE
-block           = "{" declaration* "}"
+empty_stmt      = 
+block           = "{" declarations "}"
 ```
 
 ### Expression
@@ -58,6 +58,7 @@ primary         = "true" | "false" | "nil" | "self" | "super"
 
 ### Utility
 ```
+declarations    = (declaration (NEWLINE declaration)*)?
 parameters      = IDENTIFIER ( "," IDENTIFIER )* ","?
 arguments       = expression ( "," expression )* ","?
 ```
