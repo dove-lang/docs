@@ -48,7 +48,7 @@ logic_or        = logic_and ( "or" logic_and )*
 logic_and       = equality ( "and" equality )*
 equality        = comparison ( ( "==" | "!=" ) comparison )*
 comparison      = range ( ( ">" | "<" | ">=" | "<=" ) range )*
-range           = addition ( ".." | "..." ) addition
+range           = addition (( ".." | "..." ) addition)?
 addition        = multiplication ( ( "+" | "-" ) multiplication )*
 multiplication  = unary ( ( "*" | "/" ) unary )*
 unary           = ( "!" | "-" )* call
