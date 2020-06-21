@@ -23,6 +23,8 @@ statement       = expr_stmt
                 | print_stmt
                 | return_stmt
                 | while_stmt
+                | break_stmt
+                | continue_stmt
                 | empty_stmt
                 | block
 
@@ -31,6 +33,8 @@ for_stmt        = "for" IDENTIFIER "in" expression block
 print_stmt      = "print" expression
 return_stmt     = "return" expression
 while_stmt      = "while" expression block
+break_stmt      = "break"
+continue_stmt   = "continue"
 empty_stmt      = 
 block           = "{" declarations "}"
 ```
@@ -53,7 +57,7 @@ addition        = multiplication ( ( "+" | "-" ) multiplication )*
 multiplication  = unary ( ( "*" | "/" ) unary )*
 unary           = ( "!" | "-" )* call
 call            = primary ( "(" arguments? ")" | "." IDENTIFIER )*
-primary         = "true" | "false" | "nil" | "self" | "super"
+primary         = "true" | "false" | "nil" | "self" | "super" "." IDENTIFIER
                 | NUMBER | STRING | IDENTIFIER | "(" expression ")"
 ```
 
