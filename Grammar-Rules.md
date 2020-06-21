@@ -47,7 +47,8 @@ if_expr         = "if" logic_or block ( "else if" logic_or block )* ( "else" blo
 logic_or        = logic_and ( "or" logic_and )*
 logic_and       = equality ( "and" equality )*
 equality        = comparison ( ( "==" | "!=" ) comparison )*
-comparison      = addition ( ( ">" | "<" | ">=" | "<=" ) addition )*
+comparison      = range ( ( ">" | "<" | ">=" | "<=" ) range )*
+range           = addition ( ".." | "..." ) addition
 addition        = multiplication ( ( "+" | "-" ) multiplication )*
 multiplication  = unary ( ( "*" | "/" ) unary )*
 unary           = ( "!" | "-" )* call
