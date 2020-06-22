@@ -12,7 +12,7 @@ declaration     = class_decl
                 | statement
 
 class_decl      = "class" IDENTIFIER ( "from" IDENTIFIER )? "{" ( fun_decl | NEWLINE )* "}"
-fun_decl        = "fun" IDENTIFIER "(" parameters? ")" block
+fun_decl        = "fun" IDENTIFIER "(" parameters ")" block
 var_decl        = "let" IDENTIFIER ( "=" expression )? NEWLINE
 ```
 
@@ -59,13 +59,18 @@ unary           = ( "!" | "-" )* call
 call            = primary ( "(" arguments? ")" | "." IDENTIFIER )*
 primary         = "true" | "false" | "nil" | "self" | "super" "." IDENTIFIER
                 | NUMBER | STRING | IDENTIFIER | "(" expression ")"
+                | array | tuple | dictionary
+array           = "[" arguments "]"
+tuple           = "(" arguments ")"
+dictionary      = "{" "}"
 ```
 
 ### Utility
 ```
 declarations    = (declaration (NEWLINE declaration)*)?
-parameters      = IDENTIFIER ( "," IDENTIFIER )* ","?
-arguments       = expression ( "," expression )* ","?
+parameters      = ( IDENTIFIER ( "," IDENTIFIER )* ","? )?
+arguments       = ( expression ( "," expression )* ","? )?
+key_value_pairs = ( expression ":" expression ( "," expression ":" expression )* ","? )?
 ```
 
 ## Rules Regarding Newlines
