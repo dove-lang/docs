@@ -31,7 +31,7 @@ statement       = expr_stmt
 expr_stmt       = expression
 for_stmt        = "for" IDENTIFIER "in" expression block
 print_stmt      = "print" expression
-return_stmt     = "return" expression
+return_stmt     = "return" expression?
 while_stmt      = "while" expression block
 break_stmt      = "break"
 continue_stmt   = "continue"
@@ -46,6 +46,7 @@ expression      = assignment
 
 assignment      = ( call "." )? IDENTIFIER "=" assignment
                 | if_expr
+lambda          = lambda arguments "->" block
 if_expr         = "if" logic_or block ( "else if" logic_or block )* ( "else" block )?
                 | logic_or
 logic_or        = logic_and ( "or" logic_and )*
@@ -62,7 +63,7 @@ primary         = "true" | "false" | "nil" | "self" | "super" "." IDENTIFIER
                 | array | tuple | dictionary
 array           = "[" arguments "]"
 tuple           = "(" arguments ")"
-dictionary      = "{" "}"
+dictionary      = "{" key_value_pairs "}"
 ```
 
 ### Utility
