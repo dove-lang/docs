@@ -49,7 +49,24 @@ count() // 2
 ```
 
 ### Lambdas
-Lambdas are also known as anonymous functions. They can be declared and used without a name. To declare a lambda, use the `lambda` keyword, followed by its arguments, an arrow `->`, and the code block to be executed. Lambda behave exactly like functions if they are assigned to a variable.
+Lambdas are also known as anonymous functions. They can be declared and used without a name. To declare a lambda, use the `lambda` keyword, followed by its arguments, an arrow `->`, and the code block `{}` to be executed. The braces can be omitted if the lambda only contains one statement. Lambda behave exactly like functions if they are assigned to a variable.
 ```swift
-// todo
+fun run_twice(f, x) {
+    f(x)
+    f(x)
+}
+
+run_twice(lambda x -> print 2x, 3)
+// This prints:
+// 6
+// 6
+
+// This is the same as the fib function above
+let fib;
+fib = lambda n -> {
+    if n <= 1 {
+        n
+    }
+    fib(n - 1) + fib(n - 1)
+}
 ```
