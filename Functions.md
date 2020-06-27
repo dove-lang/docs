@@ -56,7 +56,7 @@ fun run_twice(f, x) {
     f(x)
 }
 
-run_twice(lambda x -> print 2x, 3)
+run_twice(lambda x -> print 2 * x, 3)
 // This prints:
 // 6
 // 6
